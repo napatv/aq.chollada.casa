@@ -1,0 +1,27 @@
+{
+  "specversion": "1.0",
+  "type": "google.cloud.firestore.document.v1.written",
+  "source": "//firestore.googleapis.com/projects/mineral-bonus-456416-n8/databases/(default)/documents/air_quality_raw/testdoc",
+  "id": "test-123",
+  "time": "2025-04-16T18:00:00Z",
+  "datacontenttype": "application/json",
+  "data": {
+    "oldValue": {},
+    "value": {
+      "createTime": "2025-04-16T17:59:00.123Z",
+      "fields": {
+        "timestamp": {
+          "timestampValue": "2025-04-16T17:59:00Z"
+        },
+        "pm25": {
+          "doubleValue": 12.5
+        },
+        "pm10": {
+          "doubleValue": 20.1
+        }
+      },
+      "name": "projects/mineral-bonus-456416-n8/databases/(default)/documents/air_quality_raw/testdoc",
+      "updateTime": "2025-04-16T18:00:00.456Z"
+    }
+  }
+}
