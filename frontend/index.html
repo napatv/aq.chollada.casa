@@ -2,33 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Air Quality Data</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>PM History Table</title>
+
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <!-- DaisyUI plugin via Tailwind config -->
+    <script>
+        tailwind.config = {
+            plugins: [daisyui],
+            daisyui: {
+                themes: ['all']
+                }
+            }
+        
+        
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Air Quality History (Last 24 Hours)</h1>
-    </header>
-    
-    <section id="history-section">
-        <h2>Air Quality Data</h2>
-        <table id="history-table">
-            <thead>
-                <tr>
-                    <th>Timestamp</th>
-                    <th>PM2.5</th>
-                    <th>PM10</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data rows will go here -->
-            </tbody>
-        </table>
-        <p id="loading-message">Loading data...</p>
-        <p id="error-message" style="color: red; display: none;">Failed to load data. Please try again later.</p>
-    </section>
-    
-    <script src="scripts.js"></script>
+<body data-theme="dark" class="bg-base-200 min-h-screen flex flex-col items-center py-8">
+    <h2 class="text-3xl font-bold mb-8 text-center"> คุณภาพอากาศ: ทะเลสาบ 3 หมู่บ้านชลลดา</h2>
+
+    <!-- AQI Display -->
+  <div id="aqiDisplay" class="text-xl font-semibold text-center mb-6 p-3 bg-base-100 rounded-lg shadow w-11/12 md:w-3/4 lg:w-1/2"></div>
+
+    <div class="w-full px-4 mt-10">
+        <canvas id="pmChart" class="h-[200px]"></canvas>
+    </div>
+  
+  <script src="./scripts.js"></script>
 </body>
 </html>
